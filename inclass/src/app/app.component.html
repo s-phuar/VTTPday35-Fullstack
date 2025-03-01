@@ -1,0 +1,34 @@
+
+<h1>Animals</h1>
+
+<!-- display the buttons so we make a choice -->
+<div>
+
+  <!-- like href link -->
+  <span class="menuitem">
+    <a [routerLink]="['/']">bear page</a>
+  </span>
+
+  <!-- buttons -->
+  <button type="button" class="menuitem" [routerLink]="['/dog']">Doggie</button>
+
+  <button type="button" class="menuitem" (click)="showHouse()">Form</button>
+
+  <!-- routerLink pass param (3) to Number component via ActivatedRoute -->
+  <button type="button" class="menuitem" [routerLink]="['/number', '3']">Number 3</button>
+
+  <span class="menuitem">
+    <select (change)="numberChanged($event)">
+      <option value="1">1</option>
+      <option value="5" selected>5</option>
+      <option value="10">10</option>
+      <option value="15">15</option>
+    </select>
+    <!-- <button type="button" (click)="showNumber()">Show</button> -->
+  </span>
+</div>
+
+<!-- display corresponding component html content -->
+<router-outlet></router-outlet>
+
+
