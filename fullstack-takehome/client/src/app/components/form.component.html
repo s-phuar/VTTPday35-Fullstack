@@ -1,0 +1,25 @@
+<h1>Search Country Weather</h1>
+
+<form [formGroup]="form" (submit)="add()">
+    <table>
+        <tr>
+            <td>City: </td>
+            <td><input type="text" size="30" formControlName="q"></td>
+            <td> <button type="submit" [disabled]="form.invalid">Add</button> </td>
+        </tr>
+
+    </table>
+</form>
+
+<h2>Country List</h2>
+<ul>
+    @for (country of starterList; track $index) {
+        <li><a [routerLink]="['/weather', country.q]">{{country.q | titlecase}}</a></li>
+    }
+</ul>
+
+
+
+
+
+

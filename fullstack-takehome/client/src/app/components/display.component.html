@@ -1,0 +1,21 @@
+
+<h1>{{country}}</h1>
+
+<!-- truthy falsy -->
+@if (weatherData) {
+    <img [src]="'http://openweathermap.org/img/wn/' + weatherData.icon + '.png'">
+    <p>{{weatherData.description}}</p>
+    <p>Temperature: {{ weatherData.temp }}°C</p>
+
+
+}@else {
+
+    <p>{{errorData?.status}}</p>
+    <p>{{errorData?.message}}</p>
+
+}
+
+
+
+
+<button type="button" [routerLink]="['/']">Back</button>
